@@ -1,0 +1,31 @@
+NODE=`uname -n`
+EMAIL_FROM="diskalert@$NODE"
+EMAIL_TO="infra_usa@creativevirtual.com"
+# set alert level 90% is default
+ALERT=90
+# Exclude list of unwanted monitoring, if several partions then use "|" to separate the partitions.
+# An example: EXCLUDE_LIST="/dev/hdd1|/dev/hdc5"
+EXCLUDE_LIST="/auto/ripper"
+#
+#::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+#
+function main_prog() {
+while read output;
+do
+#echo $output
+  USEP=$(echo $output | awk '{ print $1}' | cut -d'%' -f1)
+  PART=$(echo $output | awk '{print $2}')
+  if [ $USEP -ge $ALERT ] ; then
+     (df -h $PART; echo ""; du -xh $PART |sort -hr|head -5) | \
+     mail -s "DISK USAGE ALERT: $NODE $PART $USEP%" -r $EMAIL_FROM $EMAIL_TO
+  fi
+done
+}
+
+if [ "$EXCLUDE_LIST" != "" ] ; then
+  df -Ph | sed 1d | grep -vE "^Filesystem|tmpfs|cdrom|${EXCLUDE_LIST}" | awk '{print $5 " " $6}' | main_prog
+else
+  df -Ph | sed 1d | grep -vE "^Filesystem|tmpfs|cdrom" | awk '{print $5 " " $6}' | main_prog
+fi
+
+#df -Ph|sed 1d | sed s/%//g | awk '{ if($5 > 90) print "Alert "$0;}'

@@ -1,0 +1,81 @@
+#!/bin/sh
+
+/data01/cv/scripts/engineControl.sh stop EngineAlticeStage
+/data01/cv/scripts/engineControl.sh stop EngineAbbottStage
+/data01/cv/scripts/engineControl.sh stop EngineAutodeskStage
+#/data01/cv/scripts/engineControl.sh stop EngineChaseEspStage
+#/data01/cv/scripts/engineControl.sh stop EngineChaseStage
+/data01/cv/scripts/engineControl.sh stop EngineCoxStage
+#/data01/cv/scripts/engineControl.sh stop EngineDisneyStage
+/data01/cv/scripts/engineControl.sh stop EngineETRADEStage
+/data01/cv/scripts/engineControl.sh stop EngineIHGStage
+/data01/cv/scripts/engineControl.sh stop EngineIVRStage
+#/data01/cv/scripts/engineControl.sh stop EnginePGTideStage
+#/data01/cv/scripts/engineControl.sh stop EngineSnapfishStage
+/data01/cv/scripts/engineControl.sh stop EngineTWCStaging
+/data01/cv/scripts/engineControl.sh stop EngineVZWStage
+/data01/cv/scripts/engineControl.sh stop EngineBoeingStaging
+/data01/cv/scripts/engineControl.sh stop EngineNWStaging
+/data01/cv/scripts/engineControl.sh stop EngineNYTStaging
+/data01/cv/scripts/engineControl.sh stop EngineQuarkStaging
+/data01/cv/scripts/engineControl.sh stop EngineASUSStaging
+
+sleep 20
+
+# location on engineControl script and V-Engine Application
+/data01/cv/scripts/engineControl.sh start /data01/cv/VEngines/ASUSStaging/bin/EngineASUSStaging 10013
+
+# location on engineControl script and V-Engine Application
+/data01/cv/scripts/engineControl.sh start /data01/cv/VEngines/AlticeStaging/bin/EngineAlticeStage 10014
+
+# location on engineControl script and V-Engine Application
+/data01/cv/scripts/engineControl.sh start /data01/cv/VEngines/BoeingStaging/bin/EngineBoeingStaging 10008
+
+# location on engineControl script and V-Engine Application
+/data01/cv/scripts/engineControl.sh start /data01/cv/VEngines/NWStaging/bin/EngineNWStaging 10012
+
+# location on engineControl script and V-Engine Application
+/data01/cv/scripts/engineControl.sh start /data01/cv/VEngines/NYTStaging/bin/EngineNYTStaging 10011
+
+# location on engineControl script and V-Engine Application
+/data01/cv/scripts/engineControl.sh start /data01/cv/VEngines/QuarkStaging/bin/EngineQuarkStaging 10010
+
+# location on engineControl script and V-Engine Application
+/data01/cv/scripts/engineControl.sh start /data01/cv/VEngines/AbbottStaging/bin/EngineAbbottStage 9995
+
+# location on engineControl script and V-Engine Application
+/data01/cv/scripts/engineControl.sh start /data01/cv/VEngines/AutodeskStaging/bin/EngineAutodeskStage 9994
+
+# location on engineControl script and V-Engine Application
+#/data01/cv/scripts/engineControl.sh start /data01/cv/VEngines/ChaseEspStaging/bin/EngineChaseEspStage 9996
+
+# location on engineControl script and V-Engine Application
+/data01/cv/scripts/engineControl.sh start /data01/cv/VEngines/CoxStaging/bin/EngineCoxStage 10007
+
+# location on engineControl script and V-Engine Application
+#/data01/cv/scripts/engineControl.sh start /data01/cv/VEngines/ChaseStaging/bin/EngineChaseStage 9993
+
+# location on engineControl script and V-Engine Application
+#/data01/cv/scripts/engineControl.sh start /data01/cv/VEngines/DisneyStaging/bin/EngineDisneyStage 9997
+
+# location on engineControl script and V-Engine Application
+/data01/cv/scripts/engineControl.sh start /data01/cv/VEngines/ETRADEStaging/bin/EngineETRADEStage 9998
+
+# location on engineControl script and V-Engine Application
+/data01/cv/scripts/engineControl.sh start /data01/cv/VEngines/IHGStaging/bin/EngineIHGStage 9999
+
+# location on engineControl script and V-Engine Application
+/data01/cv/scripts/engineControl.sh start /data01/cv/VEngines/IVRStaging/bin/EngineIVRStage 10003
+
+# location on engineControl script and V-Engine Application
+#/data01/cv/scripts/engineControl.sh start /data01/cv/VEngines/SnapfishStaging/bin/EngineSnapfishStage 10000
+
+# location on engineControl script and V-Engine Application
+/data01/cv/scripts/engineControl.sh start /data01/cv/VEngines/TWCStaging/bin/EngineTWCStaging 10001
+
+# location on engineControl script and V-Engine Application
+#/data01/cv/scripts/engineControl.sh start /data01/cv/VEngines/PGTideStaging/bin/EnginePGTideStage 9992
+
+# location on engineControl script and V-Engine Application
+/data01/cv/scripts/engineControl_Oracle.sh start /data01/cv/VEngines/VZWStaging/bin/EngineVZWStage 10002
+
